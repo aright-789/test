@@ -1,87 +1,75 @@
-﻿#define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
-#include <string.h>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+//printf("%d", 100);
+//printf("%c", 'a');
+//printf("%s", "abc");
 //int main()
 //{
-//	char ch = 0;
-//	int ch = getchar(); //假设用户输入字符‘a’并回车，此时ch会被赋值为字符‘a’的ASCII码值为97
-//	scanf("%c", &ch);
-//	printf("%c\n", ch);
-//
-//	return 0;
-//}
-//#include<stdio.h>
-//int main()
-//{
-//    int num = 10;//整型常量
-//    char ch = 'a';//字符常量
-//    double real1 = 3.14;//实型常量（由数字和小数点组成）real实数类型
-//    double real2 = 12.34e3;//实型常量（指数形式，12.34*10³）
-//    char str[] = "abcef";//字符串常量
-//    printf("num: %d\n", num);
-//    printf("ch: %c\n", ch);
-//    printf("real1: %1f\n", real1);
-//    printf("real2: %1f\n", real2);
-//    printf("str: %s\n", str);
-//    return 0;
-//}
-
-//const int num = 10;//num就是常变量-具有常属性（不能被改变的属性）
-//
-//int main()
-//{
-//	int arr[10] = { 0 };//10个元素
-//	int n = 10;
-//	int arr2[n] = { 0 };//n是变量的，这里是不行的，在int n = 10；前面加const，还是不行，因为没有改变常属性这个性质
-//	return 0;
-//
-//}
-
-//#define MAX 10000//define定义的标识符常量
-//int main()
-//{
-//	//int n = 2000;//错误
-//	int n = MAX;
-//	printf("n=%d\n", n);
-//	return 0;
-//}
-
-//字符串就是一串字符，用双引号括起来的一串字符。注意：字符串的结束标志是一个\0的转义字符。在计算字符串长度的时候\0是结束标志，不算作字符串内容。
-//int main()
-//{
-//	//字符数组-数组是一组形同类型的元素
-//	//字符串在结尾的位置隐藏了一个\n的字符
-//	//\0是字符串的结束标志
-//	//char arr[] = "hello";
-//	char arr1[] = "abc";
-//	char arr2[] = { 'a', 'b', 'c'};
-//	//打印字符串
-//	printf("%s\n", arr1);
-//	printf("%s\n", arr2);
-//	//求一下字符串的长度
-//	int len = strlen("abc");//string length
-//	printf("%d\n", len);
-//	printf("%d\n", strlen(arr1));
-//	printf("%d\n", strlen(arr2));
+//	printf("%c\n", '\'');
+//	printf("%s\n", "abc");
+//	printf("%s\n", "a");
+//	printf("%s\n", "'");
+//	printf("c:\\test\\test.c");//\t是水平制表符，就是键盘的Tab键
 //	
+//	printf("%c\n", '\130');//8进制的130是十进制的多少呢，X--ASCII码值是88,8²*1+8¹*3+8º*0=88，\ddd,ddd表示1-3个八进制的数字
+//	printf("%d\n", '\101');//A-65-8进制是：101，8²*1+8¹*0+8º*1=65
+//	printf("%d\n", '\x30');//48-'0',16¹*3+16º*0=48,\xdd,dd表示2个十六进制数字
+//	选择语句
+//	int input = 0;//输入的值
+//	printf("规划");
+//	printf("那要好好学习吗(1/0)?>:");
+//	scanf("%d", &input);
 //
+//	if (input == 1)
+//		printf("好offer\n");
+//	else
+//		printf("卖红薯\n");
+//	int line = 0;
+//	while(line < 30000)
+//	{
+//		printf("写代码：%d\n", line);
+//		line++;
+//	}
+//	if (line == 30000)
+//	{
+//		printf("好offer\n");
+//	}
 //	return 0;
 //}
-//枚举常量-可以一一列举的常量
-enum Sex
-{
-	//这种枚举类型的变量未来可能取值
-	MALE,
-	FEMALE,
-	SECRET
-};
+
+
+//函数
+//int Add(int x, int y)
+//{
+//	int z = 0;
+//	z = x + y;
+//	return z;
+//}
+//
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	scanf("%d%d", &num1, &num2);
+//	//int sum = num1 + num2;
+//	//函数的方式解决问题
+//	int sum = Add(num1, num2);
+//	printf("%d\n", sum);
+//	return 0;
+//}
+
+//数组-一组相同类型的元素的集合
+//10个整型1-10存起来
+//数组是用下标来访问的
 int main()
 {
-	enum Sex s = MALE;
-	//MALE = 3;//赋初值,是错误的
-	printf("%d\n", MALE);
-	printf("%d\n", FEMALE);
-	printf("%d\n", SECRET);
-
+	int arr[10] = { 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10 };
+	int i = 0;
+	while (i < 10)
+	{
+		printf("%d ", arr[i]);
+		i++;
+	}
+	//char ch[5] = {'a', 'b', 'c'};//不完全初始化，剩余的默认为0
 	return 0;
 }
